@@ -1,0 +1,58 @@
+***************************************************************
+When hashCode method is not overridden: Not following the mandatory part of contract
+Added true
+
+Added true
+
+Added true
+
+Added true
+
+[Emp [id=100, name=abc, salary=1000.0], Emp [id=34, name=abc24, salary=11000.0], Emp [id=100, name=abc, salary=1000.0], Emp [id=15, name=abc2, salary=10000.0]]
+4
+
+***************************************************************
+
+When hashCode method is overridden: following the mandatory part of contract,whereas optional part is ignored
+
+in emp's hc
+Added true
+
+in emp's hc
+in emp equals
+Added false
+
+in emp's hc
+in emp equals
+Added true
+
+in emp's hc
+in emp equals
+in emp equals
+Added true
+
+[Emp [id=100, name=abc, salary=1000.0], Emp [id=15, name=abc2, salary=10000.0], Emp [id=34, name=abc24, salary=11000.0]]
+3
+
+***************************************************************
+When hashCode method is overridden: following the mandatory part of contract,whereas optional part is also followed
+
+
+in emp's hc
+Added true
+
+in emp's hc
+in emp equals
+Added false
+
+in emp's hc
+Added true
+
+in emp's hc
+Added true
+
+[Emp [id=34, name=abc24, salary=11000.0], Emp [id=100, name=abc, salary=1000.0], Emp [id=15, name=abc2, salary=10000.0]]
+3
+
+
+***************************************************************
