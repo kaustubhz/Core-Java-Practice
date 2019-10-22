@@ -22,6 +22,13 @@ public class TestCustomer {
 			 * validateCustomerType(sc.next()))); System.out.println(customerList);
 			 */
 				System.out.println("\n Linking address");
+				System.out.println("\n Enter email");
+				String custEmail=sc.next();
+				if(isCustomerExist(custEmail, customerList))
+				{
+					System.out.println("Customer found ");
+//					(customerList.v(custEmail)).
+				}
 				
 			}
 			catch(Exception e)
