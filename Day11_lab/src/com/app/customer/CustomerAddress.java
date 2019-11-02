@@ -22,8 +22,15 @@ public class CustomerAddress {
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
-		return super.hashCode();
+		return Integer.parseInt(phoneNo);
 	}
+
+	@Override
+	public String toString() {
+		return "CustomerAddress [city=" + city + ", state=" + state + ", country=" + country + ", phoneNo=" + phoneNo
+				+ ", addtype=" + addtype + "]";
+	}
+	
 
 	
 }

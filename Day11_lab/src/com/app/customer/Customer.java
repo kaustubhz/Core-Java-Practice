@@ -1,9 +1,10 @@
 package com.app.customer;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 import cust_exceptions.CustomerHandlingException;
+import static utils.ValidationRules.*;
 
 public class Customer {
 	private String customerEmail;
@@ -11,7 +12,7 @@ public class Customer {
 	private double regAmount;
 	private Date regDate;
 	public CustomerType customerType;
-	private ArrayList<CustomerAddress> listAddress = new ArrayList<CustomerAddress>();
+	private static HashMap<String,CustomerAddress> listAddress;
 
 	public Customer(String customerEmail, String customerPassword, double regAmount, Date regDate,
 			CustomerType customerType) {
@@ -21,23 +22,18 @@ public class Customer {
 		this.regAmount = regAmount;
 		this.regDate = regDate;
 		this.customerType = customerType;
+		listAddress=new HashMap<>();
 	}
 
 	public String getCustomerEmail() {
 		return customerEmail;
 	}
 
-	public void linkAddress(String city, String state, String country, String phoneNo, AddressType addtype)
+	public static void linkAddress(String city, String state, String country, String phoneNo, AddressType addtype)
 			throws CustomerHandlingException {
-		/*
-		 * if(listAddress.isEmpty()) listAddress.add(new CustomerAddress(city, state,
-		 * country, phoneNo, addtype));
-		 */
-		if (listAddress.contains(new CustomerAddress(city, state, country, phoneNo, addtype))) {
-			throw new CustomerHandlingException("Address already exists");
-		}
-		listAddress.add(new CustomerAddress(city, state, country, phoneNo, addtype));
-		System.out.println("\n New address linked successfully");
+		if(isAddressExists(city, listAddress))
+			throw new CustomerHandlingException("\n Address already exists");
+		listAddress.put(city,new CustomerAddress(city, state, country, phoneNo, addtype));
 	}
 
 	@Override
@@ -49,7 +45,7 @@ public class Customer {
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
-		return super.hashCode();
+		return 199;
 	}
 
 	@Override

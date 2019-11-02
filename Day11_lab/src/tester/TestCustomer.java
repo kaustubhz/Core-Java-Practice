@@ -1,11 +1,11 @@
 package tester;
 
 import static utils.CollectionUtils.*;
-import static utils.ValidationRules.*;
 import java.util.HashMap;
 import java.util.Scanner;
 
 import com.app.customer.Customer;
+import static utils.ValidationRules.*;
 
 public class TestCustomer {
 
@@ -14,22 +14,17 @@ public class TestCustomer {
 //			System.out.println(customerList);
 			try(Scanner sc=new Scanner(System.in))
 			{
-			/*
-			 * System.out.
-			 * println("\n Enter customer\'s record\n Email Password Amount Date Type");
-			 * String custEmail=sc.next(); customerList.put(custEmail,new
-			 * Customer(custEmail,sc.next(),sc.nextDouble(),convertToDate(sc.next()),
-			 * validateCustomerType(sc.next()))); System.out.println(customerList);
-			 */
-				System.out.println("\n Linking address");
-				System.out.println("\n Enter email");
-				String custEmail=sc.next();
-				if(isCustomerExist(custEmail, customerList))
-				{
-					System.out.println("Customer found ");
-//					(customerList.v(custEmail)).
-				}
-				
+		
+				System.out.println("\n Enter address\nCity State Country Phone Number Address Type (Home/Work/Other)");
+				String city=sc.next();
+				Customer.linkAddress(city, sc.next(), sc.next(), sc.next(), validateAddressType(sc.next()));
+				System.out.println(customerList);
+//				if(isCustomerExist(custEmail, customerList))
+//				{
+//					System.out.println("Customer found ");
+////					(customerList.v(custEmail)).
+//				}
+//				
 			}
 			catch(Exception e)
 			{
