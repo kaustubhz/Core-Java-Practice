@@ -1,17 +1,38 @@
 package com.app.core;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Department {
+public class Department implements Serializable {
 	private int deptID;
 	private String deptName;
-	private ArrayList<Employee> departmentList;
+	private ArrayList<Employee> employeeList;
 	
-	public Department(int deptID, String deptName, ArrayList<Employee> departmentList) {	
+	public Department() {
+		// TODO Auto-generated constructor stub
+	}
+	public Department(int deptID, String deptName, ArrayList<Employee> employeeList) {	
 		this.deptID = deptID;
 		this.deptName = deptName;
-		this.departmentList=new ArrayList<>();
-		this.departmentList = departmentList;
+		this.employeeList=new ArrayList<>();
+		this.employeeList = employeeList;
+	}
+
+	@Override
+	public String toString() {
+		return "\n Department [ID=" + deptID + ", Name=" + deptName + ", Employee List=" + employeeList + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return this.deptID;
+	}
+
+	@Override
+	public boolean equals(Object obj) {		
+		Department other = (Department) obj;
+		return deptID == other.deptID;			
+		
 	}
 	
 	

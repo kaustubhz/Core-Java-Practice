@@ -14,6 +14,24 @@ public class Employee {
 		this.empSal = empSal;
 //		this.addressList = new ArrayList<>();
 	}
+
+	@Override
+	public String toString() {
+		return "\n Employee [Id=" + empId + ", Name=" + empName + ", Salary=" + empSal + "]";
+	}
+
+	@Override
+	public boolean equals(Object objEmp) {
+		// TODO Auto-generated method stub
+		
+		return this.empId==((Employee)objEmp).empId;
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return this.empId;
+	}
 	
 	
 
