@@ -8,6 +8,12 @@ public class Department implements Serializable {
 	private String deptName;
 	private ArrayList<Employee> employeeList;
 	
+	public ArrayList<Employee> getEmployeeList() {
+		return employeeList;
+	}
+	public void setEmployeeList(ArrayList<Employee> employeeList) {
+		this.employeeList = employeeList;
+	}
 	public Department() {
 		// TODO Auto-generated constructor stub
 	}

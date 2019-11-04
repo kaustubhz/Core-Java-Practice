@@ -12,7 +12,7 @@ public class DepartmentRecords {
 	public static HashMap<Integer,Department> populateDepartment()
 	{
 		departmentRecs.put(10001,new Department(10001, "Sales", populateEmpRecords1()));
-		departmentRecs.put(10002,new Department(10001, "Operations", populateEmpRecords2()));
+		departmentRecs.put(10002,new Department(10002, "Operations", populateEmpRecords2()));
 		departmentRecs.put(10003,new Department(10003, "Research & Development", populateEmpRecords3()));
 		
 		return departmentRecs;
