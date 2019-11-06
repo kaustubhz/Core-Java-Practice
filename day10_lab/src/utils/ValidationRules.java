@@ -93,11 +93,7 @@ public class ValidationRules {
 	
 	public static Student isPrnExists(String studentPrn,HashMap<String,Student> objHashMap)
 	{
-		for(Student s:objHashMap.values())
-		{
-			if(studentPrn.equals(s.getPrn()))
-				return s;
-		}
-		return null;
+			return objHashMap.get(studentPrn);
 	}
+	
 }
