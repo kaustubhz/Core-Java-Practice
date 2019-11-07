@@ -26,8 +26,8 @@ public class WriteDataToFile implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static void writeData() {
-		if (!new File("File1.ser").exists()) {
+	public static void writeData(String fileName) {
+		if (!new File(fileName.concat(".ser")).exists()) {
 			try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("File1.ser"))) {
 				for(int key:allDepartments.keySet())
 				{
